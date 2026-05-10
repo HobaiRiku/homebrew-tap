@@ -4,12 +4,12 @@ cask "ws2tcp" do
 
   on_macos do
     on_intel do
-      sha256 "36a377a67296454f7fd552c4ca00b7eb1ccfe287ab21e848887f10b2d90ec19e"
+      sha256 "2371682b25545f823c7e314e8071f6c83af53b1192e5cf329141fb49fef802e7"
       url "https://github.com/HobaiRiku/ws2tcp/releases/download/v#{version}/ws2tcp_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/HobaiRiku/ws2tcp/"
     end
     on_arm do
-      sha256 "c448346dcc3cb0f0386bdf3a03ed821bd47d545d3ee68e67dfd6fbd626ed5323"
+      sha256 "6908d72f7a94a52b14dd55577b0b5d01798b50796231354c93f4b5bf0ec9ab59"
       url "https://github.com/HobaiRiku/ws2tcp/releases/download/v#{version}/ws2tcp_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/HobaiRiku/ws2tcp/"
     end
@@ -17,12 +17,12 @@ cask "ws2tcp" do
 
   on_linux do
     on_intel do
-      sha256 "df551cfc3545160839223741e7f4b739036fd7a3328aead80726ea2747d643ee"
+      sha256 "cf735196fcfea575732908a926617f713da5c46c33bb6a553e2815af63147b3d"
       url "https://github.com/HobaiRiku/ws2tcp/releases/download/v#{version}/ws2tcp_#{version}_linux_amd64.tar.gz",
         verified: "github.com/HobaiRiku/ws2tcp/"
     end
     on_arm do
-      sha256 "8c27742f42887d0a925a4ca503dc4c3f60bed545096767548ec97eb1228cd9b4"
+      sha256 "22802a28394497c1c2914723c2ee709318ca070822359c38b4532922901f6531"
       url "https://github.com/HobaiRiku/ws2tcp/releases/download/v#{version}/ws2tcp_#{version}_linux_arm64.tar.gz",
         verified: "github.com/HobaiRiku/ws2tcp/"
     end
