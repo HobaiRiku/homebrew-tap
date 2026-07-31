@@ -5,21 +5,21 @@
 class SshTunnelService < Formula
   desc "Cross-platform SSH tunnel daemon with CLI, API, and embedded web UI"
   homepage "https://github.com/HobaiRiku/ssh-tunnel-service"
-  version "0.0.7"
+  version "0.0.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.7/ssh-tunnel-service_0.0.7_darwin_amd64.tar.gz"
-      sha256 "d03eec05eb88e84518f2953be2608dc296c137b08b61bd69981b97392533d95f"
+      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.8/ssh-tunnel-service_0.0.8_darwin_amd64.tar.gz"
+      sha256 "e46381a2b3f3a9aa866cfbb97de2df151f0e1b8dc7eac19e724786a0992fa816"
 
       define_method(:install) do
         bin.install "ssh-tunnel"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.7/ssh-tunnel-service_0.0.7_darwin_arm64.tar.gz"
-      sha256 "90f1c8ecdeeb20d9f471a176258d8303a5970afc27efeb751c5ef2eda3ef1f3f"
+      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.8/ssh-tunnel-service_0.0.8_darwin_arm64.tar.gz"
+      sha256 "9bc95a0ff6e379687583f5f3afafa7809c77b54d8bc619ca26d50dce061a1ff8"
 
       define_method(:install) do
         bin.install "ssh-tunnel"
@@ -29,22 +29,22 @@ class SshTunnelService < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.7/ssh-tunnel-service_0.0.7_linux_amd64.tar.gz"
-      sha256 "e34315c3225fbfa56fde146ee7d1df556b151404acfff6b7482f79c0dc514d3d"
+      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.8/ssh-tunnel-service_0.0.8_linux_amd64.tar.gz"
+      sha256 "aa032b642fd4fbdc97cce5aa07138e4d1cea443991c420416277b71e688ab24d"
       define_method(:install) do
         bin.install "ssh-tunnel"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.7/ssh-tunnel-service_0.0.7_linux_armv7.tar.gz"
-      sha256 "954165e477fd4a13338896093e3b542800e5796ca619a7991bc0fbabb0129508"
+      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.8/ssh-tunnel-service_0.0.8_linux_armv7.tar.gz"
+      sha256 "cd8ea9207759b1b88239d74f56145caff16b467a65ffacac8d97a10f573ef160"
       define_method(:install) do
         bin.install "ssh-tunnel"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.7/ssh-tunnel-service_0.0.7_linux_arm64.tar.gz"
-      sha256 "3f578e753a964822cb677e1e42bc1b980771267888dba872367f2caed5c28275"
+      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.8/ssh-tunnel-service_0.0.8_linux_arm64.tar.gz"
+      sha256 "acf09a52e8e2dc58f7464c119db6fce7de84536e9ff660287da72276c90fa8e7"
       define_method(:install) do
         bin.install "ssh-tunnel"
       end
