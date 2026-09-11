@@ -5,21 +5,21 @@
 class SshTunnelService < Formula
   desc "Cross-platform SSH tunnel daemon with CLI, API, and embedded web UI"
   homepage "https://github.com/HobaiRiku/ssh-tunnel-service"
-  version "0.0.9"
+  version "0.0.10"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.9/ssh-tunnel-service_0.0.9_darwin_amd64.tar.gz"
-      sha256 "ec5ebba575ed65cddcf444f9b146ea86887636f380fd46efa0652afcc54af293"
+      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.10/ssh-tunnel-service_0.0.10_darwin_amd64.tar.gz"
+      sha256 "79d6c2bc76740e9083cf2e46fd9e9fbc1b27b726b4c389cfa63ea67e8a2335db"
 
       define_method(:install) do
         bin.install "ssh-tunnel"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.9/ssh-tunnel-service_0.0.9_darwin_arm64.tar.gz"
-      sha256 "dbfa62b534aa6fb740ceea0927a007a821dacf1b52f71f1e0a162f1c172297d3"
+      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.10/ssh-tunnel-service_0.0.10_darwin_arm64.tar.gz"
+      sha256 "8a38d203ed038a5ef73c360ab343f4db10588949f0c8a76c3e3f2c81041357f1"
 
       define_method(:install) do
         bin.install "ssh-tunnel"
@@ -29,26 +29,40 @@ class SshTunnelService < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.9/ssh-tunnel-service_0.0.9_linux_amd64.tar.gz"
-      sha256 "13921dd9eb45eb9b38d1b597cecce5c6d97264d9dd2166555975fa2b136c0bd4"
+      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.10/ssh-tunnel-service_0.0.10_linux_amd64.tar.gz"
+      sha256 "c75c20f0f83bb7f2a6d0394485eb10487d10b68834ceefef7fc150e43a72c524"
       define_method(:install) do
         bin.install "ssh-tunnel"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.9/ssh-tunnel-service_0.0.9_linux_armv7.tar.gz"
-      sha256 "a833969b3cdbde09c86983aa22901044b5c152d210fdc4cfa7cd1bc8e59faf83"
+      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.10/ssh-tunnel-service_0.0.10_linux_armv7.tar.gz"
+      sha256 "4987864794e01a851a6947639f20f3a13c402cef4cfc0687c348e909860b4c2f"
       define_method(:install) do
         bin.install "ssh-tunnel"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.9/ssh-tunnel-service_0.0.9_linux_arm64.tar.gz"
-      sha256 "7bd9db55718a5734494c3f6e6d0c7ca5ca8958f630a7886015c0acc1ad2866ff"
+      url "https://github.com/HobaiRiku/ssh-tunnel-service/releases/download/v0.0.10/ssh-tunnel-service_0.0.10_linux_arm64.tar.gz"
+      sha256 "c551647bd780ce6abdb586824adb84c0ffe9b37084bc814b97b959c93fd2b9b0"
       define_method(:install) do
         bin.install "ssh-tunnel"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      `ssh-tunnel install` copies the binary to a stable path and points the
+      service unit at that copy, so upgrading this formula does not change what
+      the running service executes. After an upgrade, run:
+
+        ssh-tunnel update
+
+      It refreshes the installed binary and restarts the service (auto-start
+      tunnels reconnect on their own). `ssh-tunnel status` reports the version
+      skew whenever the two drift apart.
+    EOS
   end
 
   test do
