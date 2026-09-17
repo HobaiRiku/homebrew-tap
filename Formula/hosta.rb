@@ -5,21 +5,21 @@
 class Hosta < Formula
   desc "Fast interactive SSH host launcher built on top of OpenSSH"
   homepage "https://github.com/HobaiRiku/hosta"
-  version "0.0.2"
+  version "0.0.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/HobaiRiku/hosta/releases/download/v0.0.2/hosta_0.0.2_darwin_amd64.tar.gz"
-      sha256 "c3c0dd7cb0a3b1b315a16c8f65e3b98b6de5f412c84fb12067367989798512fc"
+      url "https://github.com/HobaiRiku/hosta/releases/download/v0.0.3/hosta_0.0.3_darwin_amd64.tar.gz"
+      sha256 "f7f6f16451409415d01d36487173f09a053bcf880c0d03f3f243b5817beb846c"
 
       define_method(:install) do
         bin.install "hosta"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/HobaiRiku/hosta/releases/download/v0.0.2/hosta_0.0.2_darwin_arm64.tar.gz"
-      sha256 "b258fdc0a25f1af419d6c773c0cd6635e3911ebdb33a7104604b819138bfce36"
+      url "https://github.com/HobaiRiku/hosta/releases/download/v0.0.3/hosta_0.0.3_darwin_arm64.tar.gz"
+      sha256 "038c6c54bde489bb761d520cc8e20c2416d2f0b446e16cd060c25a20f934dce9"
 
       define_method(:install) do
         bin.install "hosta"
@@ -29,15 +29,15 @@ class Hosta < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/HobaiRiku/hosta/releases/download/v0.0.2/hosta_0.0.2_linux_amd64.tar.gz"
-      sha256 "027b80c21d4c33c5043d9f876b4f3372ca8b6d26b9c424431032e92b2281002b"
+      url "https://github.com/HobaiRiku/hosta/releases/download/v0.0.3/hosta_0.0.3_linux_amd64.tar.gz"
+      sha256 "b1b461ccaabee28860d0cd07c78ff32f5d5c4e1b617b62dcf15a2b9fa3799576"
       define_method(:install) do
         bin.install "hosta"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/HobaiRiku/hosta/releases/download/v0.0.2/hosta_0.0.2_linux_arm64.tar.gz"
-      sha256 "48c943657d5a80c2f829d209d920ef107602a67ac8e68c17510c373de161fc49"
+      url "https://github.com/HobaiRiku/hosta/releases/download/v0.0.3/hosta_0.0.3_linux_arm64.tar.gz"
+      sha256 "865aaf36ec2e57a9cb783f6de4c4797bc16895da5923b93fdb2e3da6a8f231fe"
       define_method(:install) do
         bin.install "hosta"
       end
